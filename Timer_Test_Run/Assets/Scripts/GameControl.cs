@@ -56,7 +56,7 @@ public class GameControl : MonoBehaviour
     {
         gameTimer.StopTimer();
         gameOverPanel.SetActive(false);
-        StartGame(_levelCompleteTime);
+        StartGame(levelCompleteTime);
     }
 
     private void GameOverSequence()
@@ -90,14 +90,14 @@ public class GameControl : MonoBehaviour
         mainMenu.SetActive(true);
     }
 
-    private int _levelCompleteTime;
+    private int levelCompleteTime;
     public void StartGame(int levelCompleteTime)
     {
-        _levelCompleteTime = levelCompleteTime;
+        this.levelCompleteTime = levelCompleteTime;
         levelSelectPanel.SetActive(false);
         mainMenu.SetActive(false);
         gamePlay.SetActive(true);
-        gameTimer.seconds = _levelCompleteTime;
+        gameTimer.seconds = this.levelCompleteTime;
         gameTimer.StartTimer();
     }
 }
